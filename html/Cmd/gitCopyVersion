@@ -1,0 +1,10 @@
+#/bin/bash
+
+
+git ls-remote "$1" &>-
+if [ "$?" -ne 0 ]; then
+    echo "[ERROR] Unable to read from '$SITE_REPO_URL'"
+    exit 1;
+fi
+
+echo "{\"git\":\"$1\",\"version\":\"$2\"}"
