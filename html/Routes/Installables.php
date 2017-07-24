@@ -13,6 +13,7 @@ return call_user_func(function(){
 	$exampleCollection->get('/', 'get');
 
 	$exampleCollection->get('/{app:[a-zA-Z0-9]+}', 'getOne');
+	$exampleCollection->get('/{app:[a-zA-Z0-9]+}/rose', 'getTreeRose');
 	
 	$exampleCollection->post('/', 'post');
 	$exampleCollection->post('/{app:[a-zA-Z0-9]+}', 'put');

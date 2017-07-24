@@ -15,6 +15,8 @@ class Response extends \Phalcon\DI\Injectable{
 	}
 
 	protected function arrayKeysToSnake($snakeArray){
+		if( !is_array($snakeArray) ) return $snakeArray;
+		
 		foreach($snakeArray as $k=>$v){
 			if (is_array($v)){
 				$v = $this->arrayKeysToSnake($v);
